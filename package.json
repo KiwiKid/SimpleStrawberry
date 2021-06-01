@@ -1,0 +1,19 @@
+{
+  "name": "simplestrawberry",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiwiKid/SimpleStrawberry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiwiKid/SimpleStrawberry/issues"
+  },
+  "homepage": "https://github.com/KiwiKid/SimpleStrawberry#readme"
+}
