@@ -1,3 +1,8 @@
+import getConfig from 'next/config'
+
+const { serverRuntimeConfig } = getConfig()
+
+
 const imageMap = [
     { path: '/drone1.png', title: ''},
     { path: '/drone2.png', title: ''},
@@ -24,7 +29,11 @@ const imageMap = [
     { path: '/18.jpg', title: ''},
     { path: '/19.jpg', title: ''},
     { path: '/20.jpg', title: ''}
-].map((img, index) => ({  ...img, index: index }) )
+].map((img, index) => ({  
+    ...img
+    , index: index
+    , fullPath: serverRuntimeConfig.staticFolder+img.path 
+}) )
 
 //imageMap = imageMap.map((img, index) => img.index = index);
 export default imageMap;
