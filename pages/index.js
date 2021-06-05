@@ -11,6 +11,8 @@ import imagesMap from '../public/imageMap.js'
 
 import Carousel from './carousel.js'
 import TextGrid from '../components/textGrid';
+import TextList from '../components/TextList';
+import TextBlock from '../components/TextBlock';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -82,17 +84,19 @@ export default function Home() {
               </Paper>
             </Grid>
             <TextGrid text={textMap.filter(t => t.group == '1')} />
-            <ImageGrid images={imagesMap.slice(0, 9)} />
+            <ImageGrid images={imagesMap.slice(0, 6)} />
+            <TextGrid text={textMap.filter(t => t.group == '1')} />
+            <ImageGrid images={imagesMap.slice(6, 12)}/>
+            <TextGrid text={textMap.filter(t => t.group == '2')} />
+            <ImageGrid images={imagesMap.slice(18, 24)}/>
+            <TextGrid text={textMap.filter(t => t.group == '3')} />
             <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
+                <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                   <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
                 </Paper>
-           </Grid>
-            <TextGrid text={textMap.filter(t => t.group == '1')} />
-            <ImageGrid images={imagesMap.slice(9, 18)}/>
-            <TextGrid text={textMap.filter(t => t.group == '2')} />
-            <ImageGrid images={imagesMap.slice(18, 99)}/>
-            <TextGrid text={textMap.filter(t => t.group == '3')} />
+            </Grid>
+            <TextList text={textMap.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
+            <TextBlock text={textMap.filter(t => t.group == '4')} />
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <Carousel selectedIndex={"1"}/>
             </Grid>
