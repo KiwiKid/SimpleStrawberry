@@ -1,0 +1,1 @@
+This is the output directory (this file is to allow for Third Party tools to find this folder)
