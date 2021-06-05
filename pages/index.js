@@ -11,8 +11,8 @@ import imagesMap from '../public/imageMap.js'
 
 import Carousel from './carousel.js'
 import TextGrid from '../components/textGrid.js';
-import TextList from '../components/TextList.js';
-import TextBlock from '../components/TextBlock.js';
+import TextList from '../components/textList.js';
+import TextBlock from '../components/textBlock.js';
 
 const useStyles = makeStyles(theme => ({
   root: {
