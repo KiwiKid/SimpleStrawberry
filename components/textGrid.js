@@ -9,11 +9,12 @@ highlightgrid: {
     textAlign: 'center',
     fontSize: '24px',
     top: '50%',
-    backgroundColor: 'blue',
-    height: '200px'
+    height: '180px',
+    width: '80%',
+    margin: 'auto'
   },
   highlightgridtext: {
-    top: '50%',
+    top: '35%',
     position: 'relative',    
     transform: 'translateY(-50%)'
   },
@@ -25,8 +26,9 @@ const TextGrid = (props) => {
         props.text.map((t) =>  {
             return ( 
                 <Grid item style={{ 'min-height': '200px'}} xs={12} sm={6} md={6} lg={6}> 
-                    <Paper  className={classes.highlightgrid}>
-                        <span className={classes.highlightgridtext}>Living area heated by woodburner with integrated water heating</span>
+                    <Paper elevation={5} className={classes.highlightgrid}>
+                        {t.title ? <h3>{t.title}</h3> : null}
+                        <span className={classes.highlightgridtext}>{t.text}</span>
                     </Paper>
                 </Grid>
             )
