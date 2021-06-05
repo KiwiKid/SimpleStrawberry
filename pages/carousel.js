@@ -26,8 +26,8 @@ export default class MyCarousel extends Component {
             <Carousel selectedItem={selectedItem} showThumbs={false}>
             {images.map((img, index) => {
                 return (
-                    <div>
-                        <img src={img.fullPath} />
+                    <div key={index}>
+                        <img src={img.path} />
                         {!!img.title ? <p className="legend">{img.title}</p> : null }
                     </div>
                 );
