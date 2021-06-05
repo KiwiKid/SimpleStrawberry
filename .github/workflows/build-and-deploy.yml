@@ -11,8 +11,6 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run buildExport
-          env:
-            CI: true
       - uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
