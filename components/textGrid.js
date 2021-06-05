@@ -5,7 +5,11 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-highlightgrid: {
+    highlightcontainer: { 
+        minHeight: '200px',
+        padding: '1rem 0 1rem 0',
+    },
+        highlightgrid: {
     textAlign: 'center',
     fontSize: '24px',
     top: '50%',
@@ -14,7 +18,7 @@ highlightgrid: {
     margin: 'auto'
   },
   highlightgridtext: {
-    top: '35%',
+    top: '40%',
     position: 'relative',    
     transform: 'translateY(-50%)'
   },
@@ -25,7 +29,7 @@ const TextGrid = (props) => {
     return (
         props.text.map((t) =>  {
             return ( 
-                <Grid item style={{ 'min-height': '200px'}} xs={12} sm={6} md={6} lg={6}> 
+                <Grid item className={classes.highlightcontainer} xs={12} sm={6} md={6} lg={6}> 
                     <Paper elevation={5} className={classes.highlightgrid}>
                         {t.title ? <h3>{t.title}</h3> : null}
                         <span className={classes.highlightgridtext}>{t.text}</span>
