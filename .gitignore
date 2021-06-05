@@ -10,9 +10,13 @@
 
 # next.js
 /.next/
+
+!/out/
 /out/*
+!/out/_next/
+/out/_next/*
+!/out/_next/.nojekyll
 !/out/README.md
-!/out/.nojekyll
 
 # production
 /build
