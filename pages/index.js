@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from "@material-ui/core";
 
-import Image from 'next/image';
-
 
 import images from '../public/imageMap.js'
 
@@ -58,7 +56,7 @@ export default function Home() {
       <main className={classes.container}>
       <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper elevation={0} style={{height: '100%'}}>
-                  <img height="300" width="100%" src={require('./../public/Chimney-Processed.jpg')}  />
+                  <img height="300" width="100%" src={'./../public/Chimney-Processed.jpg'}  />
                 </Paper>
            </Grid>
         <Grid container spacing={0} justify="flex-start">

@@ -4,8 +4,6 @@ import { Carousel } from 'react-responsive-carousel';
 
 import images from '../public/imageMap.js';
 
-import Router from 'next/router';
-
 
 /*
 {images.map((img, index) => {

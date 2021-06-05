@@ -1,9 +1,17 @@
 const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
+//const optimizedImages = require('next-optimized-images');
 
 module.exports = withPlugins([
-    [optimizedImages, { }]
+    //[optimizedImages, { }]
 ], {
     // Export to expect url for for Github pages
     basePath: (process.env.CI == 'true' ? '/SimpleStrawberry' : ''),
+    async rewrites() {
+        return [
+          {
+            source: '/',
+            destination: '/SimpleStrawberry',
+          },
+        ]
+    },
 })
