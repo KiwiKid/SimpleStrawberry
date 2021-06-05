@@ -80,7 +80,7 @@ export default function Home() {
           })}
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper style={{height: '100%'}} className={classes.minipaper}>
-                  <img height="100%" width="100%" src={'/blueprint.jpg'}  />
+                  <img height="100%" width="100%" src={'./blueprint.jpg'}  />
                 </Paper>
            </Grid>
            <Grid item xs={12} sm={12} md={12} lg={12}>
