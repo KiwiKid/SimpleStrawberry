@@ -12,6 +12,7 @@
 /.next/
 /out/*
 !/out/README.md
+!/out/.nojekyll
 
 # production
 /build
