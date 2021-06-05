@@ -5,16 +5,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy 🚀
-          uses: actions/setup-node@v1
-          uses: actions/checkout@v2
-          with:
-            node-version: 12
-        - run: npm ci
-        - run: npm run buildExport
-        env:
+      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm run buildExport
+          env:
             CI: true
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+      - uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: main # The branch the action should deploy to.
