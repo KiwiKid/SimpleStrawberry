@@ -73,7 +73,7 @@ export default function Home() {
             return (
               <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
                 <Paper style={{height: '100%'}} className={classes.minipaper}>
-                  <img height="400" width="100%" src={value.fullPath}  />
+                  <img height="400" width="100%" src={value.path}  />
                 </Paper>
               </Grid>
             )
@@ -99,7 +99,7 @@ export default function Home() {
                 return (
                   <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
                     <Paper style={{height: '100%'}} className={classes.minipaper}>
-                      <img height="400" width="100%" src={value.fullPath}  />
+                      <img height="400" width="100%" src={value.path}  />
                     </Paper>
                   </Grid>
                 )
@@ -119,7 +119,7 @@ export default function Home() {
                 return (
                   <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
                     <Paper style={{height: '100%'}} className={classes.minipaper}>
-                      <img height="400" width="100%" src={value.fullPath}  />
+                      <img height="400" width="100%" src={value.path}  />
                     </Paper>
                   </Grid>
                 )
