@@ -27,7 +27,7 @@ export default class MyCarousel extends Component {
             {images.map((img, index) => {
                 return (
                     <div>
-                        <img src={img.path} />
+                        <img src={img.fullPath} />
                         {!!img.title ? <p className="legend">{img.title}</p> : null }
                     </div>
                 );
