@@ -56,7 +56,7 @@ export default function Home() {
       <main className={classes.container}>
       <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper elevation={0} style={{height: '100%'}}>
-                  <img height="300" width="100%" src={'./../public/Chimney-Processed.jpg'}  />
+                  <img height="300" width="100%" src={'./Chimney-Processed.jpg'}  />
                 </Paper>
            </Grid>
         <Grid container spacing={0} justify="flex-start">
@@ -141,9 +141,11 @@ export default function Home() {
               <h3>If you would like more information, please reach out to me at <a src="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3>
             </div>
            </Grid>
+           <Grid item xs={12} sm={12} md={12} lg={12}>
+             <Carousel selectedIndex={"1"}/>
+           </Grid>
         </Grid>
 			
-    <Carousel selectedIndex={"1"}/>
     </main>
 
       <footer className={styles.footer}>
