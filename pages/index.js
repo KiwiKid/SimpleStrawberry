@@ -3,22 +3,32 @@ import styles from '../styles/Home.module.css'
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from "@material-ui/core";
+import ImageGrid from '../components/imageGrid.js'
 
 
-import images from '../public/imageMap.js'
+import textMap from '../public/textMap.js'
+import imagesMap from '../public/imageMap.js'
 
 import Carousel from './carousel.js'
+import TextGrid from '../components/textGrid';
 
 const useStyles = makeStyles(theme => ({
   root: {
+    display: 'flex',
     fontFamily: "Roboto",
     "& .MuiPaper-root": {
       border: "none"
     },
+    
   },
-  headeritem : {
-    textAlign: "center"
-  },
+  
+  highlightlist: {
+    '& li':{
+      listStyleType: 'none',
+      textAlign: 'center',
+      fontSize: '24px'
+    }, 
+  }, 
     container:{
       display: "flex"
     },
@@ -45,7 +55,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Home() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <Head>
@@ -57,7 +66,7 @@ export default function Home() {
         <Grid container spacing={0} justify="flex-start">
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper elevation={0} style={{height: '100%'}}>
-                <img height="300" width="100%" src={'./Chimney-Processed.jpg'}  />
+                <img max-height="400" width="100%" src={'./Chimney-Processed.jpg'}  />
             </Paper>
           </Grid>
           <Grid item  xs={12} sm={12} md={12} lg={12}>
@@ -66,46 +75,38 @@ export default function Home() {
           <Grid item xs={12} sm={12} md={12} lg={12}>
               <Paper elevation={0} align="center" >
                 <h2>Dream Sustainable Lifestyle Property</h2>
+                <h3>Register your interest with Sandra today </h3>
+                <h3>Email: <a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
                 <p>This lifestyle property provides the perfect balance between country living and city life. Tranquil and quiet but only 12 minutes to the city.</p> 	
+                
               </Paper>
           </Grid>
-          {images.slice(0, 9).map((value, index) => {
-            return (
-              <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
-                  <img height="400" width="100%" src={value.path}  />
-                </Paper>
-              </Grid>
-            )
-          })}
+          <TextGrid text={textMap.filter(t => t.group == '1')} />
+          <ImageGrid images={imagesMap.slice(0, 9)} />
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
-                  <img height="100%" width="100%" src={'./blueprint.jpg'}  />
+                  <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
                 </Paper>
            </Grid>
-           <Grid item xs={12} sm={12} md={12} lg={12}>
-                
-            <ul>
-                <li>Stunning 360° views</li>
-                <li>All day sun with well sheltered areas</li>
-                <li>Over 3 acres of land, featuring a permaculture garden design</li>
-                <li>Living area heated by woodburner with integrated water heating</li>
-                <li>Second lounge with open fire</li>
-                <li>Insulated under floor and ceiling</li>
-                <li>4 large bedrooms</li>
-              </ul>
+           
+                <Grid item  style={{ 'min-height': '200px'}}  xs={12} sm={6} md={6} lg={6}>
+                <Paper className={classes.highlightgrid}>
+                    <span className={classes.highlightgridtext}> Second lounge with open fire</span>
+                </Paper>
                 </Grid>
-                {images.slice(9, 18).map((value, index) => {
-                return (
-                  <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                    <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
-                      <img height="400" width="100%" src={value.path}  />
-                    </Paper>
-                  </Grid>
-                )
-             })}
+                <Grid item style={{ 'min-height': '200px'}}  xs={12} sm={6} md={6} lg={6}>
+                  <Paper  className={classes.highlightgrid}>
+                  <span className={classes.highlightgridtext}>Insulated under floor and ceiling </span>
+                  </Paper>
+                </Grid>
+                <Grid item  minHeight={200} xs={12} sm={6} md={6} lg={6}>
+                <Paper  className={classes.highlightgrid}>
+                <span className={classes.highlightgridtext}>4 large bedrooms</span>
+                </Paper>
+                </Grid>
+                <ImageGrid images={imagesMap.slice(9, 18)}/>
              <Grid item xs={12} sm={12} md={12} lg={12}>
-              <ul>
+              <ul className={classes.highlightlist}>
                 <li>Sunroom/study</li>
                 <li>Large laundry with walk-in linen room</li>
                 <li>Double garage with internal access</li>
@@ -115,15 +116,7 @@ export default function Home() {
                 <li>Handy to trendy Port Chalmers' galleries and shops </li>
               </ul>
               </Grid> 
-              {images.slice(18, 99).map((value, index) => {
-                return (
-                  <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                    <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
-                      <img height="400" width="100%" src={value.path}  />
-                    </Paper>
-                  </Grid>
-                )
-             })}
+              <ImageGrid images={imagesMap.slice(18, 99)}/>
               <Grid item xs={12} sm={12} md={12} lg={12}>
           <div >
             <h3>Permaculture</h3>

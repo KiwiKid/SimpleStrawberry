@@ -1,8 +1,3 @@
-import getConfig from 'next/config'
-
-const { serverRuntimeConfig } = getConfig()
-
-
 const imageMap = [
     { path: './drone1.png', title: ''},
     { path: './drone2.png', title: ''},
@@ -15,12 +10,12 @@ const imageMap = [
     { path: './4.jpg', title: ''},
     { path: './5.jpg', title: ''},
     { path: './6.jpg', title: ''},
-    { path: './7.jpg', title: ''},
+  //  { path: './7.jpg', title: ''},
     { path: './8.jpg', title: ''},
     { path: './9.jpg', title: ''},
     { path: './10.jpg', title: ''},
     { path: './11.jpg', title: ''},
-    { path: './12.jpg', title: ''},
+    { path: './12.jpg', title: 'The view up the harbour'},
     { path: './13.jpg', title: ''},
     { path: './14.jpg', title: ''},
     { path: './15.jpg', title: ''},
