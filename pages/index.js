@@ -10,9 +10,9 @@ import textMap from '../public/textMap.js'
 import imagesMap from '../public/imageMap.js'
 
 import Carousel from './carousel.js'
-import TextGrid from '../components/textGrid';
-import TextList from '../components/TextList';
-import TextBlock from '../components/TextBlock';
+import TextGrid from '../components/textGrid.js';
+import TextList from '../components/TextList.js';
+import TextBlock from '../components/TextBlock.js';
 
 const useStyles = makeStyles(theme => ({
   root: {

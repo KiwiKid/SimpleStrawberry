@@ -4,8 +4,6 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const TextBlock = (props) => {
-    const classes = useStyles();
-
     return (
         <Grid item xs={12} sm={12} md={12} lg={6}> 
             <Paper elevation={5}>
