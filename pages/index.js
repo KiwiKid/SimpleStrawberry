@@ -54,12 +54,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={classes.container}>
-      <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Paper elevation={0} style={{height: '100%'}}>
-                  <img height="300" width="100%" src={'./Chimney-Processed.jpg'}  />
-                </Paper>
-           </Grid>
         <Grid container spacing={0} justify="flex-start">
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Paper elevation={0} style={{height: '100%'}}>
+                <img height="300" width="100%" src={'./Chimney-Processed.jpg'}  />
+            </Paper>
+          </Grid>
           <Grid item  xs={12} sm={12} md={12} lg={12}>
               <Paper elevation={0} align="center" ><h1>Berryfields</h1></Paper>
           </Grid>
