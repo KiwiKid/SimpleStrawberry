@@ -30,7 +30,8 @@ const useStyles = makeStyles(theme => ({
     }, 
   }, 
     container:{
-      display: "flex"
+      display: "flex",
+      width: '100%'
     },
     paper: {
       boxShadow: 'none',
@@ -96,11 +97,7 @@ export default function Home() {
               <Carousel selectedIndex={"1"}/>
             </Grid>
         </Grid>
-			
     </main>
-
-      <footer className={styles.footer}>
-        </footer>      
     </div>
   )
 }
