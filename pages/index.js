@@ -72,14 +72,14 @@ export default function Home() {
           {images.slice(0, 9).map((value, index) => {
             return (
               <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                <Paper style={{height: '100%'}} className={classes.minipaper}>
+                <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                   <img height="400" width="100%" src={value.path}  />
                 </Paper>
               </Grid>
             )
           })}
           <Grid item xs={12} sm={12} md={12} lg={12}>
-            <Paper style={{height: '100%'}} className={classes.minipaper}>
+            <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                   <img height="100%" width="100%" src={'./blueprint.jpg'}  />
                 </Paper>
            </Grid>
@@ -98,7 +98,7 @@ export default function Home() {
                 {images.slice(9, 18).map((value, index) => {
                 return (
                   <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                    <Paper style={{height: '100%'}} className={classes.minipaper}>
+                    <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                       <img height="400" width="100%" src={value.path}  />
                     </Paper>
                   </Grid>
@@ -118,7 +118,7 @@ export default function Home() {
               {images.slice(18, 99).map((value, index) => {
                 return (
                   <Grid item className={classes.minipaper} xs={12} sm={6} md={4} lg={4}>
-                    <Paper style={{height: '100%'}} className={classes.minipaper}>
+                    <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                       <img height="400" width="100%" src={value.path}  />
                     </Paper>
                   </Grid>
