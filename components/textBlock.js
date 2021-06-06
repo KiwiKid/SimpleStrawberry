@@ -10,7 +10,7 @@ const TextBlock = (props) => {
             {props.text.map((t) =>  {
                     return (
                         <>
-                            {t.title ? <h3>Title{t.title}</h3> : <h1>Titlenah</h1>}
+                            {t.title ? <h3>{t.title}</h3> : null}
                             <p>{t.text}</p>
                         </>
                     )

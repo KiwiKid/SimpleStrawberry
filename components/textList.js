@@ -7,7 +7,7 @@ const TextList = (props) => {
 
     return (
         <Grid item xs={12} sm={12} md={12} lg={6}> 
-            <Paper elevation={5}>
+            <Paper elevation={0}>
                 <ul>
                 {props.text.map((t) => {
                     return (

@@ -4,18 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 
 import images from '../public/imageMap.js';
 
-
-/*
-{images.map((img, index) => {
-    return (
-        <div>
-            <img src={img.path} />
-            {!!img.title ? <p className="legend">{img.title}</p> : <h2>goodbye</h2> }
-        </div>
-    );
-})}
-*/
 export default class MyCarousel extends Component {
+
     render(props){
         var selectedItem;
         if(selectedItem == null && props != null){
@@ -23,7 +13,10 @@ export default class MyCarousel extends Component {
         }
 
         return (
-            <Carousel selectedItem={selectedItem} showThumbs={false}>
+            <Carousel renderIndicator={() => {
+                return null;
+            }}
+             selectedItem={selectedItem}>
             {images.map((img, index) => {
                 return (
                     <div key={index}>

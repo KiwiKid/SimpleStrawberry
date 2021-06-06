@@ -17,6 +17,7 @@ import TextBlock from '../components/textBlock.js';
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
+    fontSize: '1.3rem',
     fontFamily: "Roboto",
     "& .MuiPaper-root": {
       border: "none"
@@ -78,8 +79,8 @@ export default function Home() {
             <Grid item xs={12} sm={12} md={12} lg={12}>
               <Paper elevation={0} align="center" >
                 <h2>Dream Sustainable Lifestyle Property</h2>
-                <h3>Register your interest with Sandra today </h3>
-                <h3>Email: <a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
+                <h3>Register your interest with Sandra today:</h3>
+                <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
                 <p>This lifestyle property provides the perfect balance between country living and city life. Tranquil and quiet but only 12 minutes to the city.</p> 	
               </Paper>
             </Grid>
@@ -94,6 +95,13 @@ export default function Home() {
                 <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                   <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
                 </Paper>
+            </Grid>
+            <Grid item xs={12} sm={12} md={12} lg={12}>
+              <Paper elevation={0} align="center" >
+                <h2>Dream Sustainable Lifestyle Property</h2>
+                <h3>Register your interest with Sandra today:</h3>
+                <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
+              </Paper>
             </Grid>
             <TextList text={textMap.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
             <TextBlock text={textMap.filter(t => t.group == '4')} />
