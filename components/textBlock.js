@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 const TextBlock = (props) => {
     return (
         <Grid item xs={12} sm={12} md={12} lg={6}> 
-            <Paper elevation={5}>
+            <Paper elevation={0}>
             {props.text.map((t) =>  {
                     return (
                         <>

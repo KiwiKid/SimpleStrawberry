@@ -6,22 +6,21 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
     highlightcontainer: { 
-        minHeight: '200px',
+        minHeight: '120px',
         padding: '1rem 0 1rem 0',
     },
-        highlightgrid: {
-    textAlign: 'center',
-    fontSize: '24px',
-    top: '50%',
-    height: '180px',
-    width: '80%',
-    margin: 'auto'
-  },
-  highlightgridtext: {
-    top: '40%',
-    position: 'relative',    
-    transform: 'translateY(-50%)'
-  },
+    highlightgrid: {
+        textAlign: 'center',
+        fontSize: '24px',
+        height: '120px',
+        width: '80%',
+        margin: 'auto'
+    },
+    highlightgridtext: {
+        top: '25%',
+        position: 'relative',    
+        transform: 'translateY(-50%)'
+    },
 }))
   
 const TextGrid = (props) => {

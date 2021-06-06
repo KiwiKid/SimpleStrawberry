@@ -86,11 +86,10 @@ export default function Home() {
             </Grid>
             <TextGrid text={textMap.filter(t => t.group == '1')} />
             <ImageGrid images={imagesMap.slice(0, 6)} />
-            <TextGrid text={textMap.filter(t => t.group == '1')} />
-            <ImageGrid images={imagesMap.slice(6, 12)}/>
             <TextGrid text={textMap.filter(t => t.group == '2')} />
-            <ImageGrid images={imagesMap.slice(18, 24)}/>
+            <ImageGrid images={imagesMap.slice(6, 12)}/>
             <TextGrid text={textMap.filter(t => t.group == '3')} />
+            <ImageGrid images={imagesMap.slice(18, 24)}/>
             <Grid item xs={12} sm={12} md={12} lg={12}>
                 <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                   <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
