@@ -76,37 +76,37 @@ export default function Home() {
           <Grid item  xs={12} sm={12} md={12} lg={12}>
             <Paper elevation={0} align="center" ><h1>Berryfields</h1></Paper>
           </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-              <Paper elevation={0} align="center" >
-                <h2>Dream Sustainable Lifestyle Property</h2>
-                <h3>Register your interest with Sandra today:</h3>
-                <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
-                <p>This lifestyle property provides the perfect balance between country living and city life. Tranquil and quiet but only 12 minutes to the city.</p> 	
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Paper elevation={0} align="center" >
+              <h2>Dream Sustainable Lifestyle Property</h2>
+              <h3>Register your interest with Sandra today:</h3>
+              <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
+              <p>This lifestyle property provides the perfect balance between country living and city life. Tranquil and quiet but only 12 minutes to the city.</p> 	
+            </Paper>
+          </Grid>
+          <TextGrid text={textMap.filter(t => t.group == '1')} />
+          <ImageGrid images={imagesMap.slice(0, 6)} />
+          <TextGrid text={textMap.filter(t => t.group == '2')} />
+          <ImageGrid images={imagesMap.slice(6, 12)}/>
+          <TextGrid text={textMap.filter(t => t.group == '3')} />
+          <ImageGrid images={imagesMap.slice(18, 24)}/>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+              <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
+                <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
               </Paper>
-            </Grid>
-            <TextGrid text={textMap.filter(t => t.group == '1')} />
-            <ImageGrid images={imagesMap.slice(0, 6)} />
-            <TextGrid text={textMap.filter(t => t.group == '2')} />
-            <ImageGrid images={imagesMap.slice(6, 12)}/>
-            <TextGrid text={textMap.filter(t => t.group == '3')} />
-            <ImageGrid images={imagesMap.slice(18, 24)}/>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-                <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
-                  <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
-                </Paper>
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-              <Paper elevation={0} align="center" >
-                <h2>Dream Sustainable Lifestyle Property</h2>
-                <h3>Register your interest with Sandra today:</h3>
-                <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
-              </Paper>
-            </Grid>
-            <TextList text={textMap.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
-            <TextBlock text={textMap.filter(t => t.group == '4')} />
-            <Grid item xs={12} sm={12} md={12} lg={12}>
-              <Carousel selectedIndex={"1"}/>
-            </Grid>
+          </Grid>
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Paper elevation={0} align="center" >
+              <h2>Dream Sustainable Lifestyle Property</h2>
+              <h3>Register your interest with Sandra today:</h3>
+              <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
+            </Paper>
+          </Grid>
+          <TextList text={textMap.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
+          <TextBlock text={textMap.filter(t => t.group == '4')} />
+          <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Carousel selectedIndex={"1"}/>
+          </Grid>
         </Grid>
     </main>
     </div>

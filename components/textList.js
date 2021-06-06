@@ -11,9 +11,7 @@ const TextList = (props) => {
                 <ul>
                 {props.text.map((t) => {
                     return (
-                        <>
-                            <li key={t.index}>{t.text}</li>
-                        </>
+                        <li key={t.index}>{t.text}</li>
                     )
                 })}
                 </ul>

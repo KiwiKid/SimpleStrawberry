@@ -21,6 +21,9 @@ const textMap = [
 
     { text: 'If you would like more information, please reach out to me at <a src="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a>', group: '5'}    
 
-]
+].map((img, index) => ({  
+    ...img
+    , index: index 
+}) )
 
 export default textMap
