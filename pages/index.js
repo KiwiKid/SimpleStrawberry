@@ -116,13 +116,13 @@ const useStyles = makeStyles(theme => ({
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Carousel selectedIndex={"1"}/>
           </Grid>
+          <Grid item className={classes.footer} xs={12} sm={12} md={12} lg={12}>
+            <div> buildID: {process.env.BUILD_ID} @ {new Date().toISOString().substring(0, 19).replace('T', ' ')}</div>
+          </Grid>
         </Grid>
+        <div>
+      </div>
     </main>
-    <footer className={classes.footer}>
-    <span>
-      {!!process.env.BUILD_ID ? <> buildID:{process.env.BUILD_ID}</> : null } @ <>{new Date().toISOString().substring(0, 19).replace('T', ' ')}</>
-    </span>
-    </footer>
     </div>
   )
 }

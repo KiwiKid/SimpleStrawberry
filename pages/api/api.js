@@ -54,11 +54,10 @@ export async function getPageText(sheetName) {
     scopes
   }).fromJSON(buildAuthJson())
 
-  console.log(sheet);
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
-    range: sheet,
+    range: sheetName,
   });
     //var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
@@ -87,11 +86,11 @@ export async function getPageImages(sheetName) {
     scopes
   }).fromJSON(buildAuthJson())
 
-  console.log(sheet);
+  console.log(sheetName);
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
-    range: sheet,
+    range: sheetName,
   });
     //var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
@@ -116,7 +115,6 @@ export async function getPageImages(sheetName) {
     scopes
   }).fromJSON(buildAuthJson())
 
-  console.log(sheet);
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
