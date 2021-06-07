@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
-    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "googleapis": "^75.0.0",
     "marked": "^2.0.7",

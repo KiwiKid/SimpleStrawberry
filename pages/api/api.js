@@ -1,5 +1,4 @@
 import { google } from 'googleapis';
-import { auth } from 'googleapis/build/src/apis/abusiveexperiencereport';
 import marked from 'marked';
 
 
@@ -10,19 +9,47 @@ import marked from 'marked';
     title || ''
   }"></a>`;
 */
-export async function getPageText(sheetName) {
+
+
+/*
+Import from google docs
+
+export async function getRichPageText(sheetName) {
   try {
-    const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
-    const jwt = new google.auth.GoogleAuth({      
+    const scopes = ['https://www.googleapis.com/auth/documents.readonly'];
+    const jwt = new google.auth.GoogleAuth({
       scopes
     }).fromJSON(buildAuthJson())
 
-    const sheets = google.sheets({ version: 'v4', auth: jwt });
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.SPREADSHEET_ID,
-      range: sheetName,
-    });
+    const docs = docs({ version: 'v1', auth: jwt });
+    console.log(docs)
 
+    const res = await docs.documents.values.get({
+      documentId: process.env.SPREADSHEET_ID
+    })
+    console.log(docs);
+
+//  const rows = response.data.values;
+//  if (rows.length) {
+//    return rows.slice(1, rows.length).map((row) => ({
+//      group: row[0] || '1',
+//      type: row[1] || '',
+//      title: row[2] || null,
+//      text: row[3] || null, 
+//      //fancyText: row[4] || null // marked(row[1].replace(/\n/g, '<br />'), { renderer }),
+//    }));
+//  }
+  } catch (err) {
+    console.log(err);
+  }
+
+  return [];
+}
+*/
+
+export async function getPageText(sheetName) {
+  try {
+    var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
     if (rows.length) {
       return rows.slice(1, rows.length).map((row) => ({
@@ -43,17 +70,8 @@ export async function getPageText(sheetName) {
 
 export async function getPageImages(sheetName) {
   try {
-    const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
-    const jwt = new google.auth.GoogleAuth({      
-      scopes
-    }).fromJSON(buildAuthJson())
-
-    const sheets = google.sheets({ version: 'v4', auth: jwt });
-    const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: process.env.SPREADSHEET_ID,
-      range: sheetName,
-    });
-
+    
+    var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
     if (rows.length) {
       return rows.slice(1, rows.length).map((row) => ({
@@ -68,6 +86,22 @@ export async function getPageImages(sheetName) {
 
   return [];
 }
+
+async function getGoogleSheet(sheetname){
+  const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+  const jwt = new google.auth.GoogleAuth({      
+    scopes
+  }).fromJSON(buildAuthJson())
+
+  const sheets = google.sheets({ version: 'v4', auth: jwt });
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SPREADSHEET_ID,
+    range: sheetName,
+  });
+
+  return response;
+}
+
 
 function buildAuthJson(){
   var authJson = {

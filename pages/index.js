@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core";
 import ImageGrid from '../components/imageGrid.js'
 
 
-//import textMap from '../public/textMap.js'
+//import textMap2 from '../public/textMap.js'
 //import imagesMap from '../public/imageMap.js'
 import { getPageImages, getPageText } from './api/api';
 
@@ -88,11 +88,11 @@ const useStyles = makeStyles(theme => ({
             </Paper>
           </Grid>
           <TextGrid text={text.filter(t => t.group == '1')} />
-          <ImageGrid images={images.slice(0, 6)} />
+          <ImageGrid images={images.filter(i => i.group == '1')} />
           <TextGrid text={text.filter(t => t.group == '2')} />
-          <ImageGrid images={images.slice(6, 12)}/>
+          <ImageGrid images={images.filter(i => i.group == '2')} />
           <TextGrid text={text.filter(t => t.group == '3')} />
-          <ImageGrid images={images.slice(18, 24)}/>
+          <ImageGrid images={images.filter(i => i.group == '3')} />
           <Grid item xs={12} sm={12} md={12} lg={12}>
               <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                 <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
