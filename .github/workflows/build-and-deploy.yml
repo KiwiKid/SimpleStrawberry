@@ -1,11 +1,7 @@
 name: Build and Deploy
 on: 
-    schedule:
-        - cron: '*/15 * * * *'
-    push:
-        branches:
-            - main
-            - feature/GoogleSheets
+  schedule:
+    - cron: '*/15 * * * *'
 
 jobs:
   build-and-deploy:
