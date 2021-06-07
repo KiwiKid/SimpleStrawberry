@@ -9,7 +9,7 @@ import ImageGrid from '../components/imageGrid.js'
 
 //import textMap2 from '../public/textMap.js'
 //import imagesMap from '../public/imageMap.js'
-import { getPageImages, getPageText } from './api/api';
+import { getPageImages, getPageText } from './api/SheetsAPI';
 
 import Carousel from './carousel.js'
 import TextGrid from '../components/textGrid.js';

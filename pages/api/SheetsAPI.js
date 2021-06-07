@@ -86,7 +86,6 @@ export async function getPageImages(sheetName) {
     scopes
   }).fromJSON(buildAuthJson())
 
-  console.log(sheetName);
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,

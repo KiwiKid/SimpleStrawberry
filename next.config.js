@@ -2,6 +2,7 @@ module.exports = {
     assetPrefix: (!!process.env.GITHUB_RUN_NUMBER ? '/SimpleStrawberry' : ''),
     env: {
        SPREADSHEET_ID: '1alulaen0qSwhYzk6KA2vnN3xtfhxpbQie6mIrHJCzI4',
+       DOCUMENT_ID: '1Atyi7Wvs2_ziSZ2KkYrZhX8bJ6icIJv0e8t1OMXTwLk',
        BUILD_ID: process.env.GITHUB_RUN_NUMBER || 'local'
     },
     webpack: config => {
