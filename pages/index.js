@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-  export default function Index({ images, text }) {
+  export default function Index({ images, text, buildTime }) {
 
   const classes = useStyles();
   return (
@@ -117,7 +117,7 @@ const useStyles = makeStyles(theme => ({
             <Carousel selectedIndex={"1"}/>
           </Grid>
           <Grid item className={classes.footer} xs={12} sm={12} md={12} lg={12}>
-            <div> buildID: {process.env.BUILD_ID} @ {new Date().toISOString().substring(0, 19).replace('T', ' ')}</div>
+            <div> buildID: {process.env.BUILD_ID} @ {buildTime}</div>
           </Grid>
         </Grid>
         <div>
@@ -131,11 +131,13 @@ const useStyles = makeStyles(theme => ({
 export async function getStaticProps(context) {
   const text = await getPageText("Text");
   const images = await getPageImages("Images");
+  const buildTime = new Date().toISOString().substring(0, 19).replace('T', ' ')
 
   return {
     props: {
       text,
       images,
+      buildTime
     },
     // Next.js will attempt to re-generate the page:
     // - When a request comes in
