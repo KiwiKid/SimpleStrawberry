@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Scheduled Build and Deploy
 on: 
   schedule:
     - cron: '*/15 * * * *'
