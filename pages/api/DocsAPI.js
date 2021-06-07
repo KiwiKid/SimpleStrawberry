@@ -3,18 +3,19 @@ import marked from 'marked';
 
 
 export async function getRichPageText(sheetName) {
-  const scopes = ['https://www.googleapis.com/auth/documents.readonly'];
+  const scopes = ['https://www.googleapis.com/auth/drive.readonly'];
   const jwt = new google.auth.GoogleAuth({
     scopes
   }).fromJSON(buildAuthJson())
 
-  const docs = google.docs({ version: 'v1', auth: jwt });
+  const drive = google.drive({ version: 'v3', auth: jwt });
 
-  var res = await docs.documents.get({
-    documentId: process.env.DOCUMENT_ID
+  var res = await drive.files.export({
+    fileId: process.env.DOCUMENT_ID,
+    mimeType: 'text/html'
   })
 console.log('api result:')
-  console.log(JSON.stringify(res.data));
+  console.log(res.data);
 
   return res.data;
 }
