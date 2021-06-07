@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
     highlightgrid: {
         textAlign: 'center',
         fontSize: '24px',
-        height: '120px',
+        height: '100px',
         width: '80%',
         margin: 'auto'
     },
@@ -26,18 +26,17 @@ const useStyles = makeStyles(theme => ({
 const TextGrid = (props) => {
     const classes = useStyles();
     return (
-        props.text.map((t) =>  {
+        props.text ? props.text.map((t) =>  {
             return ( 
                 <Grid item className={classes.highlightcontainer} xs={12} sm={6} md={6} lg={6}> 
                     <Paper elevation={5} className={classes.highlightgrid}>
                         {t.title ? <h3>{t.title}</h3> : null}
-                        <span className={classes.highlightgridtext}>{t.text}</span>
+                        <span className={classes.highlightgridtext} dangerouslySetInnerHTML={{ __html: t.text }} />
                     </Paper>
                 </Grid>
             )
-        })
+        }) : null
     )
 }
-
 
 export default TextGrid

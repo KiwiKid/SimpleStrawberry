@@ -1,3 +1,4 @@
+
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Paper from '@material-ui/core/Paper';
@@ -6,8 +7,9 @@ import { makeStyles } from "@material-ui/core";
 import ImageGrid from '../components/imageGrid.js'
 
 
-import textMap from '../public/textMap.js'
-import imagesMap from '../public/imageMap.js'
+//import textMap from '../public/textMap.js'
+//import imagesMap from '../public/imageMap.js'
+import { getPageImages, getPageText } from './api/api';
 
 import Carousel from './carousel.js'
 import TextGrid from '../components/textGrid.js';
@@ -57,7 +59,8 @@ const useStyles = makeStyles(theme => ({
     }
   }));
 
-export default function Home() {
+  export default function Index({ images, text }) {
+
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -84,12 +87,12 @@ export default function Home() {
               <p>This lifestyle property provides the perfect balance between country living and city life. Tranquil and quiet but only 12 minutes to the city.</p> 	
             </Paper>
           </Grid>
-          <TextGrid text={textMap.filter(t => t.group == '1')} />
-          <ImageGrid images={imagesMap.slice(0, 6)} />
-          <TextGrid text={textMap.filter(t => t.group == '2')} />
-          <ImageGrid images={imagesMap.slice(6, 12)}/>
-          <TextGrid text={textMap.filter(t => t.group == '3')} />
-          <ImageGrid images={imagesMap.slice(18, 24)}/>
+          <TextGrid text={text.filter(t => t.group == '1')} />
+          <ImageGrid images={images.slice(0, 6)} />
+          <TextGrid text={text.filter(t => t.group == '2')} />
+          <ImageGrid images={images.slice(6, 12)}/>
+          <TextGrid text={text.filter(t => t.group == '3')} />
+          <ImageGrid images={images.slice(18, 24)}/>
           <Grid item xs={12} sm={12} md={12} lg={12}>
               <Paper elevation={0} style={{height: '100%'}} className={classes.minipaper}>
                 <img max-height="650" width="100%" src={'./blueprint.jpg'}  />
@@ -99,11 +102,11 @@ export default function Home() {
             <Paper elevation={0} align="center" >
               <h2>Dream Sustainable Lifestyle Property</h2>
               <h3>Register your interest with Sandra today:</h3>
-              <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3> 
+              <h3><a href="mailto:southernwoman2@hotmail.com">southernwoman2@hotmail.com</a></h3>
             </Paper>
           </Grid>
-          <TextList text={textMap.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
-          <TextBlock text={textMap.filter(t => t.group == '4')} />
+          <TextList text={text.filter(t => t.group == '1' || t.group == '2' || t.group == '3')} />
+          <TextBlock text={text.filter(t => t.group == '4')} />
           <Grid item xs={12} sm={12} md={12} lg={12}>
             <Carousel selectedIndex={"1"}/>
           </Grid>
@@ -111,4 +114,21 @@ export default function Home() {
     </main>
     </div>
   )
+}
+
+
+export async function getStaticProps(context) {
+  const text = await getPageText("Text");
+  const images = await getPageImages("Images");
+
+  return {
+    props: {
+      text,
+      images,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every second
+    revalidate: 1, // In seconds
+  };
 }

@@ -23,7 +23,7 @@ const textMap = [
 
 ].map((img, index) => ({  
     ...img
-    , index: index 
+    , index: index
 }) )
 
 export default textMap

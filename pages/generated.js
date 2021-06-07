@@ -9,7 +9,7 @@ export default function Generated({ content }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {content.map((co) => (
-                {co}
+                <div>{JSON.stringify(co)}</div>
           ))}
         </div>
         {/* <div className="text-center mt-8">
@@ -27,7 +27,7 @@ export default function Generated({ content }) {
 
 
 export async function getStaticProps(context) {
-    const content = await getPageContent();
+    const content = await getPageContent("Sheet1");
   
     return {
       props: {

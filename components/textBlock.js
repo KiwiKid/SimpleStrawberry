@@ -11,7 +11,7 @@ const TextBlock = (props) => {
                     return (
                         <>
                             {t.title ? <h3>{t.title}</h3> : null}
-                            <p>{t.text}</p>
+                            <p dangerouslySetInnerHTML={{ __html: t.text }} />
                         </>
                     )
             })}
