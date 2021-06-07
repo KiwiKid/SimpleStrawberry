@@ -49,9 +49,21 @@ export async function getRichPageText(sheetName) {
 
 export async function getPageText(sheetName) {
   try {
-    var response = await getGoogleSheet(sheetName);
+    const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+  const jwt = new google.auth.GoogleAuth({      
+    scopes
+  }).fromJSON(buildAuthJson())
+
+  console.log(sheet);
+  const sheets = google.sheets({ version: 'v4', auth: jwt });
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SPREADSHEET_ID,
+    range: sheet,
+  });
+    //var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
     if (rows.length) {
+      console.log('Page Text:'+rows.length);
       return rows.slice(1, rows.length).map((row) => ({
         group: row[0] || '1',
         type: row[1] || '',
@@ -70,10 +82,21 @@ export async function getPageText(sheetName) {
 
 export async function getPageImages(sheetName) {
   try {
-    
-    var response = await getGoogleSheet(sheetName);
+    const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
+  const jwt = new google.auth.GoogleAuth({      
+    scopes
+  }).fromJSON(buildAuthJson())
+
+  console.log(sheet);
+  const sheets = google.sheets({ version: 'v4', auth: jwt });
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: process.env.SPREADSHEET_ID,
+    range: sheet,
+  });
+    //var response = await getGoogleSheet(sheetName);
     const rows = response.data.values;
     if (rows.length) {
+      console.log('Image Count:'+rows.length);
       return rows.slice(1, rows.length).map((row) => ({
         group: row[0] || '1',
         path: row[1] || null,
@@ -87,11 +110,13 @@ export async function getPageImages(sheetName) {
   return [];
 }
 
-async function getGoogleSheet(sheet){
+/*async function getGoogleSheet(sheet){
   const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   const jwt = new google.auth.GoogleAuth({      
     scopes
   }).fromJSON(buildAuthJson())
+
+  console.log(sheet);
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
@@ -99,7 +124,7 @@ async function getGoogleSheet(sheet){
   });
 
   return response;
-}
+}*/
 
 
 function buildAuthJson(){
