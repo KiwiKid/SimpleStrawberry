@@ -4,6 +4,8 @@ on:
         branches:
             - main
             - feature/GoogleSheets
+    schedule:
+        - cron: '0 9,12,15,23 * * *'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
