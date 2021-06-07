@@ -120,8 +120,7 @@ const useStyles = makeStyles(theme => ({
     </main>
     <footer className={classes.footer}>
     <span>
-      {!!process.env.BUILD_ID ? <> buildID:{process.env.BUILD_ID}</> : null }
-        @ <>{new Date().toISOString().substring(0, 19).replace('T', ' ')}</>
+      {!!process.env.BUILD_ID ? <> buildID:{process.env.BUILD_ID}</> : null } @ <>{new Date().toISOString().substring(0, 19).replace('T', ' ')}</>
     </span>
     </footer>
     </div>
