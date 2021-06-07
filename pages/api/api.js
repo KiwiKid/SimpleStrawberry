@@ -87,16 +87,15 @@ export async function getPageImages(sheetName) {
   return [];
 }
 
-async function getGoogleSheet(sheetname){
+async function getGoogleSheet(sheet){
   const scopes = ['https://www.googleapis.com/auth/spreadsheets.readonly'];
   const jwt = new google.auth.GoogleAuth({      
     scopes
   }).fromJSON(buildAuthJson())
-
   const sheets = google.sheets({ version: 'v4', auth: jwt });
   const response = await sheets.spreadsheets.values.get({
     spreadsheetId: process.env.SPREADSHEET_ID,
-    range: sheetName,
+    range: sheet,
   });
 
   return response;

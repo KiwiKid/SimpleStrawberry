@@ -34,10 +34,16 @@ const useStyles = makeStyles(theme => ({
       fontSize: '24px'
     }, 
   }, 
+  footer: {
+    textAlign: 'center',
+    fontSize: '0.5em',
+    color: 'grey'
+  },
     container:{
       display: "flex",
       width: '100%'
     },
+    
     paper: {
       boxShadow: 'none',
         maxWidth: '100%',
@@ -112,6 +118,12 @@ const useStyles = makeStyles(theme => ({
           </Grid>
         </Grid>
     </main>
+    <footer className={classes.footer}>
+    <span>
+      {!!process.env.BUILD_ID ? <> buildID:{process.env.BUILD_ID}</> : null }
+        @ <>{new Date().toISOString().substring(0, 19).replace('T', ' ')}</>
+    </span>
+    </footer>
     </div>
   )
 }
